@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Me perdonas?</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            margin: 20px 0;
+        }
+        .button-container {
+            display: flex;
+            gap: 20px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+        }
+        #yes-button {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #no-button {
+            background-color: #f44336;
+            color: white;
+        }
+        img {
+            width: 200px; /* Ajusta el tamaño de la imagen según tus necesidades */
+            height: auto;
+        }
+        #thank-you-message {
+            display: none;
+            font-size: 24px;
+            color: #4CAF50;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <img src="flores.jpeg" alt="Ramo de Flores">
+        <h1>¿Me perdonas?</h1>
+        <div class="button-container">
+            <button id="yes-button" onclick="showMessage()">Sí</button>
+            <button id="no-button" onclick="makeYesBigger()">No</button>
+        </div>
+    </div>
+    <div id="thank-you-message">¡Muchas gracias, te amo! :)</div>
+
+    <script>
+        function showMessage() {
+            document.getElementById('content').style.display = 'none';
+            document.getElementById('thank-you-message').style.display = 'block';
+        }
+
+        function makeYesBigger() {
+            var yesButton = document.getElementById('yes-button');
+            var currentSize = parseInt(window.getComputedStyle(yesButton).fontSize);
+            yesButton.style.fontSize = (currentSize + 2) + 'px';
+        }
+    </script>
+</body>
+</html>
